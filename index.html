@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanistha Hota</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -199,7 +199,6 @@
             text-decoration: underline;
         }
 
-        /* Highlight without underline or hover effect for names */
         .highlight-plain {
             color: #5fc9dc;
             font-weight: 500;
@@ -251,7 +250,7 @@
             white-space: nowrap;
         }
 
-        /* Card Elements */
+        /* Standard Card Elements */
         .card {
             background: #ffffff08;
             border-radius: 12px;
@@ -315,6 +314,195 @@
             color: #6fb4ff;
         }
 
+        /* Publication Card Component (Dark Theme Matching Original Portfolio Style) */
+        .pub-wrapper {
+            background: #ffffff08;
+            border: 1px solid #ffffff15;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .pub-wrapper:hover {
+            transform: translateY(-3px);
+            background: #ffffff12;
+            border-color: #ffffff30;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .pub-card-inner {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .pub-thumb {
+            flex: 0 0 180px;
+            height: 150px;
+            border: 1px solid #ffffff20;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pub-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pub-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pub-badge-dark {
+            display: inline-block;
+            background: rgba(95, 201, 220, 0.15);
+            color: #5fc9dc;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(95, 201, 220, 0.3);
+            align-self: flex-start;
+        }
+
+        .pub-title-dark {
+            font-size: 1.15rem;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .pub-authors-dark {
+            font-size: 0.95rem;
+            color: #ffffffd0;
+        }
+
+        .pub-venue-dark {
+            font-size: 0.9rem;
+            color: #ffffff80;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .pub-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pub-btn {
+            background: transparent;
+            border: 1px solid #ffffff30;
+            color: white;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .pub-btn:hover {
+            border-color: #fff;
+            background: #ffffff10;
+        }
+
+        /* Pop-up Modal Abstract Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #141414;
+            border: 1px solid #ffffff20;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: transparent;
+            border: none;
+            color: #ffffff80;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+            padding-right: 1.5rem;
+        }
+
+        .modal-body {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #ffffffb0;
+            text-align: justify;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #ffffff20;
+            border-radius: 10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
@@ -339,6 +527,15 @@
             .news-list-compact li {
                 flex-direction: column;
                 gap: 0.2rem;
+            }
+
+            .pub-card-inner {
+                flex-direction: column;
+            }
+
+            .pub-thumb {
+                width: 100%;
+                height: 180px;
             }
         }
     </style>
@@ -404,7 +601,7 @@
                     <ul class="news-list-compact">
                         <li><strong>2026-09:</strong> Attending my first Core A conference (ECML PKDD)</li>
                         <li><strong>2026-08:</strong> I graduated with my Bachelor’s in Computer Science and Engineering from PES University.
-                        I also started my journey as a Software Engineer at Arcesium!</li>
+                        I started my journey as a Software Engineer at Arcesium!</li>
                         <li><strong>2026-07:</strong> Published my first research paper in improving threat detection in microservice architecture and was awarded the Best Paper!</li>
                         <li><strong>2026-01:</strong> Spending the next 6 months interning at Arcesium!</li>
                         <li><strong>2025-05:</strong> Excited to spend my summer at Nokia as a Project Intern</li>
@@ -431,21 +628,51 @@
             </div>
         </div>
 
-        <div id="publications" class="page-view">
+        <div id="publications" class="page-view" style="width: 100%;">
             <h2 class="section-title">Publications</h2>
             
-            <div class="card">
-                <h3 class="card-title">Scene-CLIP: Enhancing Compositional Scene Understanding With Scene Graphs</h3>
-                <p class="card-subtitle">European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases</p>
-                <a href="--" target="_blank" class="card-link">View Paper <i class="fas fa-arrow-right"></i></a>
+            <div class="pub-wrapper">
+                <div class="pub-card-inner">
+                    <div class="pub-thumb">
+                        <img src="images/scene_clip_architecture.png" alt="Scene-CLIP Architecture Diagram">
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-badge-dark">ECML-PKDD 2026</div>
+                        <div class="pub-title-dark">Scene-CLIP: Enhancing Compositional Scene Understanding With Scene Graphs</div>
+                        <div class="pub-authors-dark">Akash Kamalesh, Tanistha Hota and Gowri Srinivasa</div>
+                        <div class="pub-venue-dark">European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases Research Track (ECML-PKDD 2026)</div>
+                        
+                        <div class="pub-actions">
+                            <button class="pub-btn" onclick="openModal('abstract-modal-1')">Abstract</button>
+                            <a href="--" target="_blank" class="pub-btn">PDF</a>
+                            <a href="--" target="_blank" class="pub-btn">Poster</a>
+                            <a href="--" target="_blank" class="pub-btn">Project Page</a>
+                            <a href="--" target="_blank" class="pub-btn">Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="card">
-                <div class="badge"><i class="fas fa-trophy"></i> Best Paper Award</div>
-                <h3 class="card-title">Defense in Depth: Intrusion Detection and Orchestrated Mitigation for Microservices</h3>
-                <p class="card-subtitle">12th IEEE International Conference on Electronics, Computing and Communication Technologies</p>
-                <p class="card-desc">My first academic publication on improving threat detection in microservice architecture, recognized with the Best Paper Award.</p>
-                <a href="--" target="_blank" class="card-link">View Paper <i class="fas fa-arrow-right"></i></a>
+            <div class="pub-wrapper" style="margin-top: 1.5rem;">
+                <div class="pub-card-inner">
+                    <div class="pub-thumb">
+                        <img src="images/defense_in_depth_thumb.png" alt="Defense in Depth Thumbnail">
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-badge-dark"><i class="fas fa-trophy"></i> Best Paper Award • IEEE CONNECT</div>
+                        <div class="pub-title-dark">Defense in Depth: Intrusion Detection and Orchestrated Mitigation for Microservices</div>
+                        <div class="pub-authors-dark">Tanistha Hota, TLVS Anuhya, Uday Kiran, Vishnu Vijayakumar, Animesh Giri</div>
+                        <div class="pub-venue-dark">12th IEEE International Conference on Electronics, Computing and Communication Technologies (IEEE CONECCT)</div>
+                        
+                        <div class="pub-actions">
+                            <button class="pub-btn" onclick="openModal('abstract-modal-2')">Abstract</button>
+                            <a href="--" target="_blank" class="pub-btn">PDF</a>
+                            <a href="--" target="_blank" class="pub-btn">Poster</a>
+                            <a href="--" target="_blank" class="pub-btn">Project Page</a>
+                            <a href="--" target="_blank" class="pub-btn">Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -466,6 +693,26 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="abstract-modal-1" onclick="closeModalOutside(event, 'abstract-modal-1')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('abstract-modal-1')"><i class="fas fa-times"></i></button>
+            <div class="modal-title">Scene-CLIP: Enhancing Compositional Scene Understanding With Scene Graphs</div>
+            <div class="modal-body">
+                Large-scale vision-language models (VLMs) like CLIP excel in general image-text alignment but struggle with fine-grained compositional understanding, failing to correctly ground object attributes, relationships, and spatial configurations. Previous works incorporating scene graph knowledge (SGK) improve compositionality but rely on heavy external encoders or modifications to pretrained backbones, breaking end-to-end optimization in the vision-language embedding space. Recent works address this limitation through synthetic hard-negative sampling, improving compositional performance. Informed by this, we introduce Scene-CLIP, a lightweight, attention-based framework that enhances CLIP’s compositional reasoning through two key innovations: (1) a dual negative sampling strategy combining syntactic negatives (e.g., swapped object-relation pairs) with semantic hard negatives and (2) a parameter-efficient triple aggregator that processes scene graph triples directly within CLIP’s embedding space. Experiments show substantial improvements across multiple tasks, outperforming many state-of-the-art methods on SugarCrepe, SugarCrepe++, and Visual Genome benchmarks with an average 12% accuracy gain over CLIP and improving group retrieval scores on the VisMin benchmark by 16% relative to a fine-tuned CLIP baseline. Notably, Scene-CLIP surpasses strong recent baselines while using 28% fewer parameters than prior SGK-based approaches, illustrating that incorporating scene graphs with sophisticated negative sampling advances compositional reasoning in VLMs.
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="abstract-modal-2" onclick="closeModalOutside(event, 'abstract-modal-2')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('abstract-modal-2')"><i class="fas fa-times"></i></button>
+            <div class="modal-title">Defense in Depth: Intrusion Detection and Orchestrated Mitigation for Microservices</div>
+            <div class="modal-body">
+                Microservice architectures are highly susceptible to distributed security threats due to their decentralized nature and inter-service communication overhead. This work introduces an integrated defense-in-depth framework combining real-time intrusion detection mechanisms with automated, orchestrated mitigation protocols. By analyzing runtime system telemetry and service call patterns, the proposed architecture rapidly isolates compromised containers and enforces granular policy restrictions without disrupting normal user traffic, minimizing cascading failures across cloud environments.
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchPage(pageId) {
             // Hide all pages
@@ -482,6 +729,22 @@
             // Highlight corresponding nav link
             event.target.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOutside(event, modalId) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModal(modalId);
+            }
         }
     </script>
 </body>
