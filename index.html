@@ -506,15 +506,54 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
-                padding: 1.2rem 1.5rem;
+                padding: 1rem;
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: stretch;
+            }
+
+            .name {
+                text-align: center;
+            }
+
+            .nav-right {
+                flex-direction: column;
+                gap: 0.8rem;
+                width: 100%;
             }
 
             .nav-links {
-                display: none;
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                width: 100%;
+                background: #ffffff08;
+                padding: 0.4rem;
+                border-radius: 30px;
+                border: 1px solid #ffffff15;
+            }
+
+            .nav-link {
+                flex: 1;
+                text-align: center;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                border-radius: 20px;
+            }
+
+            .nav-link.active {
+                background: #ffffff20;
+                color: #fff;
+            }
+
+            .nav-right > .nav-social-links,
+            .nav-right > a {
+                display: flex;
+                justify-content: center;
             }
 
             .container {
-                padding: 7rem 1.5rem 3rem 1.5rem;
+                padding: 11rem 1.2rem 3rem 1.2rem;
             }
 
             .profile-section {
@@ -546,9 +585,9 @@
         <div class="name" onclick="switchPage('about')">Tanistha Hota</div>
         <div class="nav-right">
             <div class="nav-links">
-                <button class="nav-link active" onclick="switchPage('about')">About</button>
-                <button class="nav-link" onclick="switchPage('publications')">Publications</button>
-                <button class="nav-link" onclick="switchPage('projects')">Projects</button>
+                <button class="nav-link active" onclick="switchPage('about', event)">About</button>
+                <button class="nav-link" onclick="switchPage('publications', event)">Publications</button>
+                <button class="nav-link" onclick="switchPage('projects', event)">Projects</button>
             </div>
             <div class="nav-social-links">
                 <a href="https://www.linkedin.com/in/tanistha-hota/" target="_blank" class="nav-social-btn">
@@ -641,7 +680,7 @@
             <div class="pub-wrapper">
                 <div class="pub-card-inner">
                     <div class="pub-thumb">
-                        <img src="images/scene_clip_architecture.png" alt="Scene-CLIP Architecture Diagram">
+                        <img src="images/SCENECLIP.png" alt="Scene-CLIP Architecture Diagram">
                     </div>
                     <div class="pub-content">
                         <div class="pub-badge-dark">ECML-PKDD 2026</div>
@@ -663,7 +702,7 @@
             <div class="pub-wrapper" style="margin-top: 1.5rem;">
                 <div class="pub-card-inner">
                     <div class="pub-thumb">
-                        <img src="images/defense_in_depth_thumb.png" alt="Defense in Depth Thumbnail">
+                        <img src="images/DI2DOM.png" alt="Defense in Depth Thumbnail">
                     </div>
                     <div class="pub-content">
                         <div class="pub-badge-dark"><i class="fas fa-trophy"></i> Best Paper Award • IEEE CONNECT</div>
@@ -721,7 +760,9 @@
     </div>
 
     <script>
-        function switchPage(pageId) {
+        function switchPage(pageId, customEvent) {
+            const targetEvent = customEvent || event;
+
             // Hide all pages
             const pages = document.querySelectorAll('.page-view');
             pages.forEach(page => page.classList.remove('active'));
@@ -733,8 +774,10 @@
             // Show target page
             document.getElementById(pageId).classList.add('active');
 
-            // Highlight corresponding nav link
-            event.target.classList.add('active');
+            // Highlight corresponding nav link if triggered via click
+            if (targetEvent && targetEvent.target) {
+                targetEvent.target.classList.add('active');
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
