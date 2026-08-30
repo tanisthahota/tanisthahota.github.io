@@ -14,6 +14,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -23,51 +24,23 @@
             overflow-x: hidden;
         }
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: fadeOutLoading 3s ease-in-out forwards;
-        }
-
-        .loading-name {
-            font-size: 4rem;
-            font-weight: 600;
-            color: #000;
-            opacity: 1;
-            /* font-family: 'Courier New', monospace; */
-        }
-
-        @keyframes fadeOutLoading {
-            0% { opacity: 1; }
-            70% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
-        }
-
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 2rem 4rem;
+            padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #ffffff10;
         }
 
         .name {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards 3.2s;
         }
 
         .nav-right {
@@ -82,8 +55,8 @@
         }
 
         .nav-social-btn {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: #ffffff10;
             display: flex;
@@ -91,13 +64,11 @@
             align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(-10px);
         }
 
         .nav-social-btn i {
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .nav-social-btn:hover {
@@ -106,236 +77,205 @@
         }
 
         .resume-btn {
-            padding: 0.8rem 2rem;
+            padding: 0.6rem 1.8rem;
             background: transparent;
             border: 2px solid #ffffff30;
             color: white;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards 3.5s;
         }
 
         .resume-btn:hover {
             border-color: #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
         .container {
-            min-height: 100vh;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 9rem 2rem 4rem 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .profile-section {
+            display: flex;
             align-items: center;
-            padding: 2rem;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: zoomIn 1s ease forwards 3.2s;
-        }
-
-        .bio-text {
-            font-size: 1.1rem;
-            color: #ffffff90;
-            text-align: center;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards 3.5s;
-        }
-
-        .description-container {
-            max-width: 900px;
+            gap: 2.5rem;
             margin-bottom: 3rem;
             width: 100%;
         }
 
-        .description-paragraph {
-            font-size: 1rem;
-            color: #ffffff;
-            text-align: left;
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffffff20;
+            flex-shrink: 0;
+        }
+
+        .profile-intro h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-tags {
+            font-size: 0.95rem;
+            color: #ffffff90;
             line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0;
         }
 
-        .description-paragraph:nth-child(1) {
-            animation: fadeIn 0.8s ease forwards 3.8s;
+        .bio-container {
+            width: 100%;
+            margin-bottom: 3.5rem;
         }
 
-        .description-paragraph:nth-child(2) {
-            animation: fadeIn 0.8s ease forwards 4.3s;
+        .bio-container h2, .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            font-weight: 600;
+            border-bottom: 1px solid #ffffff15;
+            padding-bottom: 0.5rem;
         }
 
-        .description-paragraph:nth-child(3) {
-            animation: fadeIn 0.8s ease forwards 4.8s;
+        .bio-paragraph {
+            font-size: 1rem;
+            color: #ffffffd0;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
         }
 
         .highlight {
             color: #5fc9dc;
+            font-weight: 500;
         }
 
         .sections-container {
             width: 100%;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 5.5s;
         }
 
         .section {
             margin-bottom: 3rem;
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        /* News Section Styling matching the reference */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .news-list li {
+            font-size: 0.95rem;
+            color: #ffffffd0;
+            line-height: 1.6;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .news-list li strong {
             color: #fff;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #fff;
-            transition: width 0.3s ease;
-        }
-
-        .section-title:hover::after {
-            width: 100%;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .card {
-            background: #ffffff10;
-            border-radius: 15px;
+            background: #ffffff08;
+            border-radius: 12px;
             padding: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             transition: all 0.3s ease;
-            border: 1px solid #ffffff20;
+            border: 1px solid #ffffff15;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            background: #ffffff15;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            background: #ffffff12;
+            border-color: #ffffff30;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
             color: #fff;
+            font-weight: 600;
         }
 
         .card-subtitle {
             font-size: 0.9rem;
-            color: #ffffff90;
+            color: #ffffff80;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #ffffffb0;
             margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(95, 201, 220, 0.15);
+            color: #5fc9dc;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(95, 201, 220, 0.3);
         }
 
         .card-link {
             color: #4a9eff;
             text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .card-link:hover {
             color: #6fb4ff;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes zoomIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Apply slide-in animation to nav social buttons */
-        .nav-social-btn:nth-child(1) {
-            animation: slideInNav 0.5s ease forwards 3.6s;
-        }
-        .nav-social-btn:nth-child(2) {
-            animation: slideInNav 0.5s ease forwards 3.8s;
-        }
-        .nav-social-btn:nth-child(3) {
-            animation: slideInNav 0.5s ease forwards 4.0s;
-        }
-
-        @keyframes slideInNav {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
-                padding: 1rem 2rem;
-            }
-
-            .nav-right {
-                gap: 1rem;
-            }
-
-            .nav-social-links {
-                gap: 0.5rem;
-            }
-
-            .nav-social-btn {
-                width: 35px;
-                height: 35px;
-            }
-
-            .resume-btn {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .description-paragraph {
-                font-size: 0.9rem;
-            }
-
-            .loading-name {
-                font-size: 3rem;
+                padding: 1.2rem 1.5rem;
             }
 
             .container {
-                padding: 1rem;
+                padding: 7rem 1.5rem 3rem 1.5rem;
             }
 
-            .description-container {
-                padding: 0 1rem;
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .news-list li {
+                flex-direction: column;
+                gap: 0.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-name" id="scramble-text">TANISTHA HOTA</div>
-    </div>
 
     <nav>
         <div class="name">Tanistha Hota</div>
@@ -358,105 +298,79 @@
     </nav>
 
     <div class="container">
-        <img src="images/tanz profile.jpeg" alt="Profile Picture" class="profile-pic">
-        <div class="bio-text">
-           Software Engineer @Arcesium | Prev. Project Intern @Nokia | BTech CSE graduate @PES University
-        </div>
-        
-        <div class="description-container">
-            <div class="description-paragraph">
-                I'm a Software Engineer at Arcesium and a BTech Computer Science undergraduate at PES University, advised by <span class="highlight">Dr. Gowri Srinivasa</span>, with a strong research focus on <span class="highlight">Natural Language Processing and Computer Vision
+        <!-- Profile Header -->
+        <div class="profile-section">
+            <img src="images/tanz profile.jpeg" alt="Tanistha Hota" class="profile-pic">
+            <div class="profile-intro">
+                <h1>Hi there 👋!</h1>
+                <div class="profile-tags">
+                    Software Engineer @Arcesium | Prev. Project Intern @Nokia | BTech CSE graduate @PES University
+                </div>
             </div>
         </div>
 
+        <!-- Expanded Bio -->
+        <div class="bio-container">
+            <h2>About Me</h2>
+            <p class="bio-paragraph">
+                I'm a Software Engineer at <span class="highlight">Arcesium</span>. My interests are in building efficient and interpretable machine learning systems. I earned my Bachelor’s degree in Computer Science and Engineering at <span class="highlight">PES University</span>. I also got a specialisation in machine intelligence and Data Science here.
+            </p>
+            <p class="bio-paragraph">
+                Outside of ML, my curiosities lie in cloud research and development.
+            </p>
+        </div>
+
+        <!-- Sections Container -->
         <div class="sections-container">
+            <!-- Publications Section -->
             <div class="section">
                 <h2 class="section-title">Publications</h2>
+                
                 <div class="card">
                     <h3 class="card-title">Scene-CLIP: Enhancing Compositional Scene Understanding With Scene Graphs</h3>
                     <p class="card-subtitle">European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases</p>
-                    <a href="--" target="_blank" class="card-link">View Paper →</a>
+                    <a href="--" target="_blank" class="card-link">View Paper <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="card">
+                    <div class="badge"><i class="fas fa-trophy"></i> Best Paper Award</div>
                     <h3 class="card-title">Defense in Depth: Intrusion Detection and Orchestrated Mitigation for Microservices</h3>
                     <p class="card-subtitle">12th IEEE International Conference on Electronics, Computing and Communication Technologies</p>
-                    <a href="--" target="_blank" class="card-link">View Paper →</a>
+                    <p class="card-desc">My first academic publication on improving threat detection in microservice architecture, recognized with the Best Paper Award.</p>
+                    <a href="--" target="_blank" class="card-link">View Paper <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
+            <!-- Achievements Section -->
             <div class="section">
-                <h2 class="section-title">Latest Achievements</h2>
+                <h2 class="section-title">Achievements</h2>
                 <div class="card">
                     <h3 class="card-title">Hasgeek Open Source AI Hackathon Winners</h3>
                     <p class="card-subtitle">January 2024 - April 2024</p>
-                    <p>Winners of the National Level Open Source AI Hackathon (Winter Edition) hosted by Hasgeek, sponsored by Microsoft and Meta.</p>
-                    <a href="https://www.linkedin.com/posts/tanistha-hota_hasgeek-thefifthelephant-ai-activity-7193592642859851778-Hx39?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4YtVUBDIl11az-CmIdaLiBQJ0JQWRBWEM" target="_blank" class="card-link">View Announcement →</a>
+                    <p class="card-desc">Winners of the National Level Open Source AI Hackathon (Winter Edition) hosted by Hasgeek, sponsored by Microsoft and Meta.</p>
+                    <a href="https://www.linkedin.com/posts/tanistha-hota_hasgeek-thefifthelephant-ai-activity-7193592642859851778-Hx39?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD4YtVUBDIl11az-CmIdaLiBQJ0JQWRBWEM" target="_blank" class="card-link">View Announcement <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <div class="card">
+                    <h3 class="card-title">Immense Contribution Award</h3>
+                    <p class="card-subtitle">PES University</p>
+                    <p class="card-desc">Awarded by PES University’s Department of Computer Science and Engineering for my immense contributions.</p>
+                </div>
+            </div>
+
+            <!-- News Section Moved Down with timeline list format matching reference -->
+            <div class="section">
+                <h2 class="section-title">News</h2>
+                <ul class="news-list">
+                    <li><strong>2026-09:</strong> Attending my Core A conference (ECML PKDD)</li>
+                    <li><strong>2026-08:</strong> I graduated with my Bachelor’s in Computer Science and Engineering from PES University.</li>
+                    <li><strong>2026-07:</strong> Published my first research paper in improving threat detection in microservice architecture and was awarded the Best Paper!</li>
+                    <li><strong>2026-01:</strong> Spending the next 6 months interning at Arcesium!</li>
+                    <li><strong>2025-05:</strong> Excited to spend my summer at Nokia as a Project Intern</li>
+                    <li><strong>2024-04:</strong> Won the National Level Open Source AI Hackathon (Winter Edition) hosted by Hasgeek sponsored by Microsoft and Meta</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <script>
-        // Text Scramble Effect
-        function scrambleText() {
-            const element = document.getElementById('scramble-text');
-            const finalText = 'TANISTHA HOTA';
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            
-            let iteration = 0;
-            const totalDuration = 1000; // Changed from 3000 to 1500 (1.5 seconds - double speed)
-            const frameRate = 30; // Update every 50ms
-            const totalFrames = totalDuration / frameRate;
-            
-            const interval = setInterval(() => {
-                const progress = iteration / totalFrames;
-                
-                element.textContent = finalText
-                    .split('')
-                    .map((char, index) => {
-                        if (char === ' ') return ' '; // Keep spaces
-                        
-                        // Each character settles at different times
-                        const charProgress = Math.max(0, (progress * finalText.length) - index);
-                        
-                        if (charProgress >= 1) {
-                            return char; // Character has settled
-                        } else {
-                            return chars[Math.floor(Math.random() * chars.length)]; // Random character
-                        }
-                    })
-                    .join('');
-                
-                iteration++;
-                
-                if (iteration >= totalFrames) {
-                    clearInterval(interval);
-                    element.textContent = finalText; // Ensure final text is correct
-                }
-            }, frameRate);
-        }
-
-        // Start scramble effect on page load
-        scrambleText();
-
-        // Typewriter effect for description (unchanged)
-        const text = "I'm a BTech Computer Science undergraduate at PES University, advised by Dr. Gowri Srinivasa, with a strong research focus on Natural Language Processing and Computer Vision.";
-        
-        let i = 0;
-        const typewriter = document.getElementById('typewriter');
-        
-        function typeText() {
-            if (i < text.length) {
-                typewriter.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeText, 15);
-            } else {
-                typewriter.style.borderRight = 'none';
-            }
-        }
-        
-        setTimeout(typeText, 3800);
-    </script>
 </body>
 </html>
