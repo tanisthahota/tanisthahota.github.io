@@ -347,12 +347,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 12px; 
         }
 
         .pub-thumb img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; 
         }
 
         .pub-content {
@@ -587,7 +588,7 @@
             <div class="nav-links">
                 <button class="nav-link active" onclick="switchPage('about', event)">About</button>
                 <button class="nav-link" onclick="switchPage('publications', event)">Publications</button>
-                <button class="nav-link" onclick="switchPage('projects', event)">Projects</button>
+                <!-- <button class="nav-link" onclick="switchPage('projects', event)">Projects</button> -->
             </div>
             <div class="nav-social-links">
                 <a href="https://www.linkedin.com/in/tanistha-hota/" target="_blank" class="nav-social-btn">
@@ -628,7 +629,7 @@
                     Beyond machine learning, I am deeply intrigued by core computer science concepts like cloud development and operating systems. It fascinates me how intricate software abstractions orchestrates hardware and distributed resources to run modern applications seamlessly at scale.
                 </p>
                 <p class="bio-paragraph">
-                    During my time at PES University, I also served as a Teaching Assistant for the course <strong>Social Computing (Fall 2025)</strong>.
+                    During my time at PES University, I also served as a Teaching Assistant for the course <strong>Social Computing (Fall 2025)</strong> undertaken by <span class="highlight-plain">Dr. Richa Sharma</span>.
                 </p>
                 <p class="bio-paragraph">
                     Outside of my core technical domains in ML and systems development, I am a trained Indian Classical dancer holding a Junior Diploma degree in Bharatanatyam.
@@ -690,10 +691,10 @@
                         
                         <div class="pub-actions">
                             <button class="pub-btn" onclick="openModal('abstract-modal-1')">Abstract</button>
-                            <a href="--" target="_blank" class="pub-btn">PDF</a>
-                            <a href="--" target="_blank" class="pub-btn">Poster</a>
-                            <a href="--" target="_blank" class="pub-btn">Project Page</a>
-                            <a href="--" target="_blank" class="pub-btn">Google Scholar</a>
+                            <!-- <a href="--" target="_blank" class="pub-btn">PDF</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Poster</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Project Page</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Google Scholar</a> -->
                         </div>
                     </div>
                 </div>
@@ -707,22 +708,22 @@
                     <div class="pub-content">
                         <div class="pub-badge-dark"><i class="fas fa-trophy"></i> Best Paper Award • IEEE CONNECT</div>
                         <div class="pub-title-dark">Defense in Depth: Intrusion Detection and Orchestrated Mitigation for Microservices</div>
-                        <div class="pub-authors-dark">Tanistha Hota, TLVS Anuhya, Uday Kiran, Vishnu Vijayakumar, Animesh Giri</div>
+                        <div class="pub-authors-dark">Tanistha Hota, TLVS Anuhya, Uday Kiran, Vishnu Vijayakumar and Animesh Giri</div>
                         <div class="pub-venue-dark">12th IEEE International Conference on Electronics, Computing and Communication Technologies</div>
                         
                         <div class="pub-actions">
                             <button class="pub-btn" onclick="openModal('abstract-modal-2')">Abstract</button>
-                            <a href="--" target="_blank" class="pub-btn">PDF</a>
-                            <a href="--" target="_blank" class="pub-btn">Poster</a>
-                            <a href="--" target="_blank" class="pub-btn">Project Page</a>
-                            <a href="--" target="_blank" class="pub-btn">Google Scholar</a>
+                            <!-- <a href="--" target="_blank" class="pub-btn">PDF</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Poster</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Project Page</a> -->
+                            <!-- <a href="--" target="_blank" class="pub-btn">Google Scholar</a> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="projects" class="page-view">
+        <!-- <div id="projects" class="page-view">
             <h2 class="section-title">Projects</h2>
             
             <div class="card">
@@ -736,7 +737,7 @@
                 <p class="card-subtitle">Research & Engineering Project</p>
                 <p class="card-desc">Engineered an advanced intrusion detection mechanism coupled with orchestrated mitigation protocols for cloud microservice architectures.</p>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="modal-overlay" id="abstract-modal-1" onclick="closeModalOutside(event, 'abstract-modal-1')">
