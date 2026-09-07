@@ -199,11 +199,6 @@
             text-decoration: underline;
         }
 
-        .highlight-plain {
-            color: #5fc9dc;
-            font-weight: 500;
-        }
-
         .section {
             margin-bottom: 3rem;
         }
@@ -285,18 +280,6 @@
             color: #ffffffb0;
             margin-bottom: 1rem;
             line-height: 1.6;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(95, 201, 220, 0.15);
-            color: #5fc9dc;
-            padding: 0.2rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            border: 1px solid rgba(95, 201, 220, 0.3);
         }
 
         .card-link {
@@ -588,7 +571,6 @@
             <div class="nav-links">
                 <button class="nav-link active" onclick="switchPage('about', event)">About</button>
                 <button class="nav-link" onclick="switchPage('publications', event)">Publications</button>
-                <!-- <button class="nav-link" onclick="switchPage('projects', event)">Projects</button> -->
             </div>
             <div class="nav-social-links">
                 <a href="https://www.linkedin.com/in/tanistha-hota/" target="_blank" class="nav-social-btn">
@@ -623,13 +605,13 @@
                 <h2>About Me</h2>
                 <p class="bio-paragraph">
                     I'm a Software Engineer at <span class="highlight">Arcesium</span>. My interests lie in building efficient and interpretable machine learning systems, with a particular passion for natural language processing and vision learning. I earned my Bachelor’s degree in Computer Science and Engineering at <a href="https://cs.pes.edu" target="_blank" class="highlight">PES University</a>, where I was advised by <br>
-                    <span class="highlight-plain">Dr. Gowri Srinivasa</span> and <span class="highlight-plain">Dr. Animesh Giri</span>. I also earned a specialization in Machine Intelligence and Data Science here.
+                    <a href="https://scholar.google.com/citations?user=xmJ1KmsAAAAJ&hl=en&oi=ao" target="_blank" class="highlight">Dr. Gowri Srinivasa</a> and <a href="https://scholar.google.com/citations?user=7q3inAcAAAAJ&hl=en&oi=ao" target="_blank" class="highlight">Dr. Animesh Giri</a>. I also earned a specialization in Machine Intelligence and Data Science here.
                 </p>
                 <p class="bio-paragraph">
                     Beyond machine learning, I am deeply intrigued by core computer science concepts like cloud development and operating systems. It fascinates me how intricate software abstractions orchestrates hardware and distributed resources to run modern applications seamlessly at scale.
                 </p>
                 <p class="bio-paragraph">
-                    During my time at PES University, I also served as a Teaching Assistant for the course <strong>Social Computing (Fall 2025)</strong> undertaken by <span class="highlight-plain">Dr. Richa Sharma</span>.
+                    During my time at PES University, I also served as a Teaching Assistant for the course <strong>Social Computing (Fall 2025)</strong> undertaken by <a href="https://scholar.google.com/citations?user=MbYQg-YAAAAJ&hl=en&oi=ao" target="_blank" class="highlight">Dr. Richa Sharma</a>.
                 </p>
                 <p class="bio-paragraph">
                     Outside of my core technical domains in ML and systems development, I am a trained Indian Classical dancer holding a Junior Diploma degree in Bharatanatyam.
@@ -691,10 +673,6 @@
                         
                         <div class="pub-actions">
                             <button class="pub-btn" onclick="openModal('abstract-modal-1')">Abstract</button>
-                            <!-- <a href="--" target="_blank" class="pub-btn">PDF</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Poster</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Project Page</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Google Scholar</a> -->
                         </div>
                     </div>
                 </div>
@@ -713,31 +691,11 @@
                         
                         <div class="pub-actions">
                             <button class="pub-btn" onclick="openModal('abstract-modal-2')">Abstract</button>
-                            <!-- <a href="--" target="_blank" class="pub-btn">PDF</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Poster</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Project Page</a> -->
-                            <!-- <a href="--" target="_blank" class="pub-btn">Google Scholar</a> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- <div id="projects" class="page-view">
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="card">
-                <h3 class="card-title">Open Source AI Hackathon Project</h3>
-                <p class="card-subtitle">Hasgeek (Microsoft & Meta Sponsored)</p>
-                <p class="card-desc">Developed an innovative open-source AI solution during the national-level hackathon winter edition, securing the winning spot.</p>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title">Microservice Security & Orchestration</h3>
-                <p class="card-subtitle">Research & Engineering Project</p>
-                <p class="card-desc">Engineered an advanced intrusion detection mechanism coupled with orchestrated mitigation protocols for cloud microservice architectures.</p>
-            </div>
-        </div> -->
     </div>
 
     <div class="modal-overlay" id="abstract-modal-1" onclick="closeModalOutside(event, 'abstract-modal-1')">
